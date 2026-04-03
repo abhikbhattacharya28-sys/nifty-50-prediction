@@ -1,0 +1,14 @@
+services:
+  # Main web service — serves the dashboard + runs background scheduler
+  - type: web
+    name: market-analysis-opportunity-landscape
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn server:app --workers 1 --threads 2 --timeout 120
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+      - key: REFRESH_TOKEN
+        value: "change-this-to-a-secret-token"
+    autoDeploy: true
+    healthCheckPath: /api/health

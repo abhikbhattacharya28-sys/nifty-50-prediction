@@ -1,0 +1,870 @@
+{
+  "last_updated": "2026-04-01",
+  "model_version": "v2-expweighted",
+  "nifty_last_close": 22679.4,
+  "prediction": {
+    "daily": {
+      "direction": "BULLISH \u2191",
+      "expected_move_pct": 0.092,
+      "confidence_pct": 11.5,
+      "target_level": 22700.31
+    },
+    "weekly": {
+      "direction": "BEARISH \u2193",
+      "expected_move_pct": -3.67,
+      "confidence_pct": 100.0,
+      "target_level": 21847.07
+    }
+  },
+  "accuracy": {
+    "overall_directional": 52.8,
+    "last_30_days": 63.3,
+    "last_10_days": 70.0,
+    "cv_avg_directional": 57.1,
+    "cv_avg_mae_pct": 0.954,
+    "magnitude_within_025": 13.2,
+    "magnitude_within_050": 28.3,
+    "magnitude_within_100": 58.5,
+    "note": "Walk-forward out-of-sample (no data leakage)"
+  },
+  "model_params": {
+    "type": "Ridge Regression",
+    "alpha": 10.0,
+    "halflife_days": 60,
+    "weighting": "Exponential decay (recent data weighted higher)",
+    "n_features": 21
+  },
+  "variables": [
+    {
+      "name": "DJI_prevday",
+      "correlation": 0.4746,
+      "directional_correlation": 0.3277,
+      "weight_pct": 9.26,
+      "signed_weight": 0.1951
+    },
+    {
+      "name": "SP500_prevday",
+      "correlation": 0.459,
+      "directional_correlation": 0.3471,
+      "weight_pct": 7.17,
+      "signed_weight": 0.1509
+    },
+    {
+      "name": "Nasdaq_prevday",
+      "correlation": 0.3934,
+      "directional_correlation": 0.3086,
+      "weight_pct": 0.02,
+      "signed_weight": 0.0004
+    },
+    {
+      "name": "Crude_prevday",
+      "correlation": -0.2292,
+      "directional_correlation": -0.104,
+      "weight_pct": 6.37,
+      "signed_weight": -0.1342
+    },
+    {
+      "name": "DXY_prevday",
+      "correlation": -0.2242,
+      "directional_correlation": -0.2087,
+      "weight_pct": 4.92,
+      "signed_weight": -0.1036
+    },
+    {
+      "name": "BankNIFTY_prevday",
+      "correlation": -0.1808,
+      "directional_correlation": -0.1122,
+      "weight_pct": 10.68,
+      "signed_weight": -0.225
+    },
+    {
+      "name": "IntraRange_pct",
+      "correlation": 0.1408,
+      "directional_correlation": 0.2479,
+      "weight_pct": 9.21,
+      "signed_weight": 0.1939
+    },
+    {
+      "name": "Prev_Return",
+      "correlation": -0.1356,
+      "directional_correlation": -0.026,
+      "weight_pct": 1.19,
+      "signed_weight": -0.025
+    },
+    {
+      "name": "IndiaVIX_prevday",
+      "correlation": 0.1048,
+      "directional_correlation": 0.0883,
+      "weight_pct": 3.52,
+      "signed_weight": -0.0741
+    },
+    {
+      "name": "Momentum_5d",
+      "correlation": -0.0826,
+      "directional_correlation": -0.1951,
+      "weight_pct": 5.51,
+      "signed_weight": -0.1161
+    },
+    {
+      "name": "ATR_pct",
+      "correlation": -0.0665,
+      "directional_correlation": 0.2008,
+      "weight_pct": 1.59,
+      "signed_weight": 0.0335
+    },
+    {
+      "name": "Volume_Zscore",
+      "correlation": 0.063,
+      "directional_correlation": 0.1228,
+      "weight_pct": 4.27,
+      "signed_weight": 0.0899
+    },
+    {
+      "name": "Dist_SMA200",
+      "correlation": 0.0628,
+      "directional_correlation": -0.1736,
+      "weight_pct": 6.38,
+      "signed_weight": 0.1344
+    },
+    {
+      "name": "MACD_pct",
+      "correlation": 0.0627,
+      "directional_correlation": -0.1576,
+      "weight_pct": 2.39,
+      "signed_weight": 0.0502
+    },
+    {
+      "name": "Gold_prevday",
+      "correlation": -0.0494,
+      "directional_correlation": 0.018,
+      "weight_pct": 3.01,
+      "signed_weight": -0.0634
+    },
+    {
+      "name": "IndiaVIX_level",
+      "correlation": -0.049,
+      "directional_correlation": 0.1368,
+      "weight_pct": 4.74,
+      "signed_weight": -0.0997
+    },
+    {
+      "name": "Dist_SMA50",
+      "correlation": 0.0177,
+      "directional_correlation": -0.1828,
+      "weight_pct": 0.7,
+      "signed_weight": 0.0146
+    },
+    {
+      "name": "RSI_14",
+      "correlation": -0.0113,
+      "directional_correlation": -0.1785,
+      "weight_pct": 5.21,
+      "signed_weight": -0.1098
+    },
+    {
+      "name": "BB_position",
+      "correlation": -0.0102,
+      "directional_correlation": -0.1325,
+      "weight_pct": 5.0,
+      "signed_weight": 0.1052
+    },
+    {
+      "name": "USDINR_prevday",
+      "correlation": 0.0101,
+      "directional_correlation": -0.1217,
+      "weight_pct": 6.5,
+      "signed_weight": -0.1369
+    },
+    {
+      "name": "ROC_10d",
+      "correlation": -0.0042,
+      "directional_correlation": -0.1452,
+      "weight_pct": 2.36,
+      "signed_weight": 0.0497
+    }
+  ],
+  "historical_predictions": [
+    {
+      "date": "2026-01-08",
+      "actual": -1.01,
+      "predicted": 0.168,
+      "correct": false
+    },
+    {
+      "date": "2026-01-09",
+      "actual": -0.748,
+      "predicted": 0.261,
+      "correct": false
+    },
+    {
+      "date": "2026-01-12",
+      "actual": 0.416,
+      "predicted": 0.038,
+      "correct": true
+    },
+    {
+      "date": "2026-01-13",
+      "actual": -0.225,
+      "predicted": 0.038,
+      "correct": false
+    },
+    {
+      "date": "2026-01-14",
+      "actual": -0.259,
+      "predicted": 0.229,
+      "correct": false
+    },
+    {
+      "date": "2026-01-16",
+      "actual": 0.112,
+      "predicted": 0.407,
+      "correct": true
+    },
+    {
+      "date": "2026-01-20",
+      "actual": -1.38,
+      "predicted": 0.252,
+      "correct": false
+    },
+    {
+      "date": "2026-01-21",
+      "actual": -0.297,
+      "predicted": -1.081,
+      "correct": true
+    },
+    {
+      "date": "2026-01-22",
+      "actual": 0.526,
+      "predicted": -0.252,
+      "correct": false
+    },
+    {
+      "date": "2026-01-23",
+      "actual": -0.954,
+      "predicted": 0.24,
+      "correct": false
+    },
+    {
+      "date": "2026-01-27",
+      "actual": 0.506,
+      "predicted": -0.181,
+      "correct": false
+    },
+    {
+      "date": "2026-01-28",
+      "actual": 0.665,
+      "predicted": -0.403,
+      "correct": false
+    },
+    {
+      "date": "2026-01-29",
+      "actual": 0.3,
+      "predicted": 0.349,
+      "correct": true
+    },
+    {
+      "date": "2026-01-30",
+      "actual": -0.387,
+      "predicted": -0.356,
+      "correct": true
+    },
+    {
+      "date": "2026-02-02",
+      "actual": -0.917,
+      "predicted": -0.368,
+      "correct": true
+    },
+    {
+      "date": "2026-02-03",
+      "actual": 2.548,
+      "predicted": -0.583,
+      "correct": false
+    },
+    {
+      "date": "2026-02-04",
+      "actual": 0.188,
+      "predicted": 1.252,
+      "correct": true
+    },
+    {
+      "date": "2026-02-05",
+      "actual": -0.517,
+      "predicted": 0.045,
+      "correct": false
+    },
+    {
+      "date": "2026-02-06",
+      "actual": 0.198,
+      "predicted": -0.025,
+      "correct": false
+    },
+    {
+      "date": "2026-02-09",
+      "actual": 0.676,
+      "predicted": 0.312,
+      "correct": true
+    },
+    {
+      "date": "2026-02-10",
+      "actual": 0.262,
+      "predicted": -0.515,
+      "correct": false
+    },
+    {
+      "date": "2026-02-11",
+      "actual": 0.072,
+      "predicted": 0.115,
+      "correct": true
+    },
+    {
+      "date": "2026-02-12",
+      "actual": -0.565,
+      "predicted": 0.093,
+      "correct": false
+    },
+    {
+      "date": "2026-02-13",
+      "actual": -1.302,
+      "predicted": -0.427,
+      "correct": true
+    },
+    {
+      "date": "2026-02-17",
+      "actual": 0.166,
+      "predicted": -0.013,
+      "correct": false
+    },
+    {
+      "date": "2026-02-18",
+      "actual": 0.365,
+      "predicted": -0.151,
+      "correct": false
+    },
+    {
+      "date": "2026-02-19",
+      "actual": -1.414,
+      "predicted": 0.031,
+      "correct": false
+    },
+    {
+      "date": "2026-02-20",
+      "actual": 0.459,
+      "predicted": -0.346,
+      "correct": false
+    },
+    {
+      "date": "2026-02-23",
+      "actual": 0.554,
+      "predicted": -0.387,
+      "correct": false
+    },
+    {
+      "date": "2026-02-24",
+      "actual": -1.121,
+      "predicted": -0.091,
+      "correct": true
+    },
+    {
+      "date": "2026-02-25",
+      "actual": 0.228,
+      "predicted": 0.242,
+      "correct": true
+    },
+    {
+      "date": "2026-02-26",
+      "actual": 0.055,
+      "predicted": 0.379,
+      "correct": true
+    },
+    {
+      "date": "2026-02-27",
+      "actual": -1.247,
+      "predicted": -0.172,
+      "correct": true
+    },
+    {
+      "date": "2026-03-02",
+      "actual": -1.243,
+      "predicted": -0.041,
+      "correct": true
+    },
+    {
+      "date": "2026-03-04",
+      "actual": -1.549,
+      "predicted": -0.458,
+      "correct": true
+    },
+    {
+      "date": "2026-03-05",
+      "actual": 1.166,
+      "predicted": -0.101,
+      "correct": false
+    },
+    {
+      "date": "2026-03-06",
+      "actual": -1.274,
+      "predicted": -0.728,
+      "correct": true
+    },
+    {
+      "date": "2026-03-09",
+      "actual": -1.728,
+      "predicted": -0.843,
+      "correct": true
+    },
+    {
+      "date": "2026-03-10",
+      "actual": 0.972,
+      "predicted": 0.018,
+      "correct": true
+    },
+    {
+      "date": "2026-03-11",
+      "actual": -1.627,
+      "predicted": 1.304,
+      "correct": false
+    },
+    {
+      "date": "2026-03-12",
+      "actual": -0.954,
+      "predicted": -0.59,
+      "correct": true
+    },
+    {
+      "date": "2026-03-13",
+      "actual": -2.065,
+      "predicted": -1.544,
+      "correct": true
+    },
+    {
+      "date": "2026-03-16",
+      "actual": 1.113,
+      "predicted": -0.854,
+      "correct": false
+    },
+    {
+      "date": "2026-03-17",
+      "actual": 0.736,
+      "predicted": 0.256,
+      "correct": true
+    },
+    {
+      "date": "2026-03-18",
+      "actual": 0.834,
+      "predicted": -0.483,
+      "correct": false
+    },
+    {
+      "date": "2026-03-19",
+      "actual": -3.262,
+      "predicted": -1.024,
+      "correct": true
+    },
+    {
+      "date": "2026-03-20",
+      "actual": 0.488,
+      "predicted": 0.3,
+      "correct": true
+    },
+    {
+      "date": "2026-03-23",
+      "actual": -2.604,
+      "predicted": -1.047,
+      "correct": true
+    },
+    {
+      "date": "2026-03-24",
+      "actual": 1.776,
+      "predicted": 1.028,
+      "correct": true
+    },
+    {
+      "date": "2026-03-25",
+      "actual": 1.72,
+      "predicted": -1.393,
+      "correct": false
+    },
+    {
+      "date": "2026-03-27",
+      "actual": -2.089,
+      "predicted": -0.52,
+      "correct": true
+    },
+    {
+      "date": "2026-03-30",
+      "actual": -2.139,
+      "predicted": -0.853,
+      "correct": true
+    },
+    {
+      "date": "2026-04-01",
+      "actual": 1.558,
+      "predicted": -0.367,
+      "correct": false
+    }
+  ],
+  "latest_inputs": {
+    "SP500_prevday": -0.3946,
+    "DJI_prevday": 0.1096,
+    "Nasdaq_prevday": -0.7755,
+    "Crude_prevday": 3.2517,
+    "Gold_prevday": 0.7569,
+    "USDINR_prevday": 0.5008,
+    "DXY_prevday": 0.3595,
+    "RSI_14": 33.7779,
+    "MACD_pct": -2.7794,
+    "BB_position": 0.0843,
+    "Dist_SMA50": -9.9336,
+    "Dist_SMA200": -11.4941,
+    "Prev_Return": -2.1394,
+    "Momentum_5d": -3.3879,
+    "ROC_10d": -3.5406,
+    "BankNIFTY_prevday": -3.8245,
+    "IndiaVIX_prevday": 4.0672,
+    "IndiaVIX_level": 27.89,
+    "Volume_Zscore": 2.199,
+    "IntraRange_pct": 1.908,
+    "ATR_pct": 2.1383
+  },
+  "multi_day_forecasts": [
+    {
+      "label": "T+1",
+      "date": "2026-04-02",
+      "day_name": "Thursday",
+      "direction": "BULLISH \u2191",
+      "expected_move_pct": 0.092,
+      "confidence_pct": 11.5,
+      "target_level": 22700.31,
+      "is_holiday": false
+    },
+    {
+      "label": "T+2",
+      "date": "2026-04-06",
+      "day_name": "Monday",
+      "direction": "BEARISH \u2193",
+      "expected_move_pct": -0.008,
+      "confidence_pct": 1.1,
+      "target_level": 22698.46,
+      "is_holiday": false
+    },
+    {
+      "label": "T+3",
+      "date": "2026-04-07",
+      "day_name": "Tuesday",
+      "direction": "BEARISH \u2193",
+      "expected_move_pct": -0.037,
+      "confidence_pct": 5.7,
+      "target_level": 22690.02,
+      "is_holiday": false
+    },
+    {
+      "label": "T+4",
+      "date": "2026-04-08",
+      "day_name": "Wednesday",
+      "direction": "BEARISH \u2193",
+      "expected_move_pct": -0.061,
+      "confidence_pct": 8.0,
+      "target_level": 22676.2,
+      "is_holiday": false
+    },
+    {
+      "label": "T+5",
+      "date": "2026-04-09",
+      "day_name": "Thursday",
+      "direction": "BEARISH \u2193",
+      "expected_move_pct": -0.079,
+      "confidence_pct": 10.3,
+      "target_level": 22658.24,
+      "is_holiday": false
+    },
+    {
+      "label": "T+6",
+      "date": "2026-04-10",
+      "day_name": "Friday",
+      "direction": "BEARISH \u2193",
+      "expected_move_pct": -0.093,
+      "confidence_pct": 12.6,
+      "target_level": 22637.1,
+      "is_holiday": false
+    },
+    {
+      "label": "T+7",
+      "date": "2026-04-13",
+      "day_name": "Monday",
+      "direction": "BEARISH \u2193",
+      "expected_move_pct": -0.104,
+      "confidence_pct": 14.9,
+      "target_level": 22613.53,
+      "is_holiday": false
+    }
+  ],
+  "nse_holidays_2026": [
+    "2026-01-15",
+    "2026-01-26",
+    "2026-03-03",
+    "2026-03-26",
+    "2026-03-31",
+    "2026-04-03",
+    "2026-04-14",
+    "2026-05-01",
+    "2026-05-28",
+    "2026-06-26",
+    "2026-09-14",
+    "2026-10-02",
+    "2026-10-20",
+    "2026-11-08",
+    "2026-11-10",
+    "2026-11-24",
+    "2026-12-25"
+  ],
+  "live_market_data": {
+    "nifty": {
+      "price": 22713.1,
+      "change_pct": 0.15
+    },
+    "sensex": {
+      "price": 73319.55,
+      "change_pct": 0.25
+    },
+    "sp500": {
+      "price": 6575.32,
+      "change_pct": 0.72
+    },
+    "nasdaq": {
+      "price": 24019.99,
+      "change_pct": 1.18
+    },
+    "dow": {
+      "price": 46565.74,
+      "change_pct": 0.48
+    },
+    "gold": {
+      "price": 4658.0,
+      "change_pct": -2.62
+    },
+    "crude": {
+      "price": 107.87,
+      "change_pct": 7.74
+    },
+    "usdinr": {
+      "price": 93.07,
+      "change_pct": -0.45
+    },
+    "dxy": {
+      "price": 100.17,
+      "change_pct": 0.52
+    },
+    "indiavix": {
+      "price": 25.52,
+      "change_pct": 2.04
+    },
+    "fetched_at": "2026-04-02 10:19 IST"
+  },
+  "dynamic_analysis": {
+    "generated_at": "April 02, 2026 10:19 IST",
+    "verdict": "BULLISH \u2014 CAUTIOUS OPTIMISM",
+    "verdict_color": "green",
+    "verdict_summary": "The model is registering a confluence of bullish signals. Daily forecast: +0.09% (conf 12%). Weekly forecast: -3.67% (conf 100%). India VIX at 25.52 (+2.0% today) \u2014 elevated fear.",
+    "live_prices": {
+      "nifty": {
+        "price": 22713.1,
+        "change_pct": 0.15,
+        "label": "NIFTY 50"
+      },
+      "sensex": {
+        "price": 73319.55,
+        "change_pct": 0.25,
+        "label": "SENSEX"
+      },
+      "sp500": {
+        "price": 6575.32,
+        "change_pct": 0.72,
+        "label": "S&P 500"
+      },
+      "nasdaq": {
+        "price": 24019.99,
+        "change_pct": 1.18,
+        "label": "NASDAQ"
+      },
+      "gold": {
+        "price": 4658.0,
+        "change_pct": -2.62,
+        "label": "Gold ($/oz)"
+      },
+      "crude": {
+        "price": 107.87,
+        "change_pct": 7.74,
+        "label": "Crude WTI ($)"
+      },
+      "usdinr": {
+        "price": 93.07,
+        "change_pct": -0.45,
+        "label": "USD/INR"
+      },
+      "dxy": {
+        "price": 100.17,
+        "change_pct": 0.52,
+        "label": "DXY Index"
+      },
+      "indiavix": {
+        "price": 25.52,
+        "change_pct": 2.04,
+        "label": "India VIX"
+      }
+    },
+    "factors": [
+      {
+        "label": "Global Markets",
+        "sentiment": "bullish",
+        "title": "S&P 500: +0.72% | Nasdaq: +1.18%",
+        "body": "US markets closed higher \u2014 S&P 500 at 6575.32 (+0.72%), Nasdaq at 24019.99 (+1.18%). DXY at 100.17 (+0.52%). US market moves feed into NIFTY's next-day open via overnight correlation.",
+        "weight": "13.4% model weight"
+      },
+      {
+        "label": "Gold / Safe-Haven",
+        "sentiment": "bullish",
+        "title": "Gold at $4658.0 (-2.62% today)",
+        "body": "Gold is the #1 predictor in the model. Falling gold signals risk-on \u2014 positive for equities. Current level: $4658.0.",
+        "weight": "15.1% model weight"
+      },
+      {
+        "label": "USD/INR Currency",
+        "sentiment": "bullish",
+        "title": "USD/INR at \u20b993.07 (-0.45% today)",
+        "body": "USD/INR is the #2 predictor. Rupee strengthening \u2014 FII flows may stabilise or improve.",
+        "weight": "19.5% model weight"
+      },
+      {
+        "label": "Technical Indicators",
+        "sentiment": "bearish",
+        "title": "RSI-14: 33.8 | MACD: -2.78% | BB Position: 0.08",
+        "body": "RSI at 33.8 (oversold \u2014 bounce watch). MACD negative \u2014 downtrend. Price is 9.9% below 50-DMA and 11.5% below 200-DMA.",
+        "weight": "RSI/MACD/BB combined"
+      },
+      {
+        "label": "Crude Oil / Inflation",
+        "sentiment": "bearish",
+        "title": "Crude WTI at $107.87 (+7.74% today)",
+        "body": "Oil at $107.87/barrel. Elevated crude hurts India as a net importer \u2014 widening CAD, inflation risk, sector headwinds for aviation, cement, fertilizers.",
+        "weight": "10.4% model weight"
+      }
+    ],
+    "scenarios": [
+      {
+        "name": "Base Case",
+        "direction": "bull",
+        "trigger": "Current macro conditions persist \u2014 oil/FII/currency headwinds",
+        "impact": "+0.09% to -3.67%",
+        "prob": 39
+      },
+      {
+        "name": "Reversal",
+        "direction": "bear",
+        "trigger": "Geopolitical de-escalation, crude eases, FII inflows return",
+        "impact": "-0.5% to -1.5%",
+        "prob": 46
+      },
+      {
+        "name": "Extreme Move",
+        "direction": "bull",
+        "trigger": "Shock event: crude spike/crash, global selloff/rally",
+        "impact": "+2% to +3.5%",
+        "prob": 15
+      }
+    ],
+    "sentiment_scorecard": {
+      "bear_global": 2,
+      "bull_global": 2,
+      "bear_india": 0,
+      "bull_india": 0,
+      "mixed": 6,
+      "net_sentiment": "BEAR",
+      "vix_level": 25.52,
+      "vix_signal": "Fear Elevated"
+    },
+    "key_levels": {
+      "support1": 22453.0,
+      "support2": 22112.0,
+      "resistance1": 22906.0,
+      "resistance2": 23246.0
+    }
+  },
+  "causal_analysis": {
+    "generated_at": "April 02, 2026 \u2014 10:19 IST",
+    "headline": "NIFTY IS RANGE-BOUND TODAY: CRUDE SPIKE + ELEVATED FEAR (VIX)",
+    "primary_cause": "Primary driver: CRUDE SPIKE. NIFTY is range-bound 0.15% to 22,713.10.",
+    "signal_chain": [
+      {
+        "rank": 1,
+        "signal": "Crude Oil WTI",
+        "reading": "$107.87 (+7.74% today)",
+        "impact": "CRITICAL BEARISH",
+        "why": "Crude surged +7.74% to $107.87 \u2014 a major shock. India imports 85%+ of crude. Every $1 rise in oil costs India ~$1.5B extra annually, widens the CAD, fuels inflation, and pressures rupee. Sectors directly hit: aviation, cement, fertilizers, OMCs, paints.",
+        "nifty_effect": "Bearish drag on 40%+ of NIFTY by weight"
+      },
+      {
+        "rank": 2,
+        "signal": "India VIX (Fear Gauge)",
+        "reading": "25.52 (+2.04% today)",
+        "impact": "STRONGLY BEARISH",
+        "why": "India VIX at 25.5 is in elevated fear territory (normal: 12\u201318). Institutional traders are buying put options = expecting more downside. This causes forced de-risking, wider spreads, and margin calls on leveraged positions.",
+        "nifty_effect": "High VIX \u2192 self-reinforcing selling loop"
+      },
+      {
+        "rank": 3,
+        "signal": "USD/INR (Rupee)",
+        "reading": "\u20b993.07 (-0.45% today)",
+        "impact": "BULLISH",
+        "why": "Rupee strengthening today. At \u20b993.07, the rupee is historically very weak. Rupee strengthening = relief for India's import economics and FII return calculations. A sustained move below \u20b984 would be meaningfully bullish for NIFTY.",
+        "nifty_effect": "Positive signal \u2014 FII returns improve, import economics improve"
+      },
+      {
+        "rank": 4,
+        "signal": "Global Markets Correlation",
+        "reading": "S&P 500 +0.72% | NASDAQ +1.18% | NIFTY +0.15%",
+        "impact": "BULLISH",
+        "why": "NIFTY is moving in sync with global markets today. S&P 500 at 6,575 (up 0.72%). Global macro tone is risk-on \u2014 positive for FII flows into India.",
+        "nifty_effect": "Global tailwind"
+      },
+      {
+        "rank": 5,
+        "signal": "Gold (Safe-Haven Signal)",
+        "reading": "$4,658/oz (-2.62% today)",
+        "impact": "BULLISH",
+        "why": "Gold at $4,658 \u2014 falling gold = risk-on rotation back into equities, modestly bullish. At $4,658/oz the absolute level is historically extreme (was ~$2,000 in 2023), signaling prolonged geopolitical fear has not resolved.",
+        "nifty_effect": "Risk-on tailwind"
+      },
+      {
+        "rank": 6,
+        "signal": "Technical Structure",
+        "reading": "RSI-14: 33.8 | MACD: -2.78% | -9.9% from 50-DMA | -11.5% from 200-DMA",
+        "impact": "BEARISH",
+        "why": "RSI at 34 = OVERSOLD \u2014 historically this level sees short-term bounces. But oversold can stay oversold in a downtrend. MACD negative \u2014 downtrend. NIFTY is 9.9% below the 50-day MA and 11.5% below 200-day MA. Bearish structure: lower highs, lower lows. Resistance at 22906.0.",
+        "nifty_effect": "Key support: 22,453 / 22,112 | Resistance: 22,906 / 23,246"
+      },
+      {
+        "rank": 7,
+        "signal": "US Dollar Index (DXY)",
+        "reading": "100.17 (+0.52% today)",
+        "impact": "BEARISH",
+        "why": "DXY at 100.17. Strong dollar = emerging market outflows. FIIs repatriate to USD assets = selling pressure on NIFTY.",
+        "nifty_effect": "FII outflow pressure when DXY rises above 101"
+      }
+    ],
+    "root_cause_summary": "The dominant pressure chain today: Crude at $108 (+7.7%) \u2192 India import bill rises \u2192 CAD widens \u2192 Rupee at \u20b993.07 \u2192 FII returns compressed \u2192 FII selling continues \u2192 NIFTY supply exceeds demand \u2192 VIX at 25.5 (fear elevated) \u2192 forced de-risking amplifies the move.",
+    "what_to_watch": [
+      "Crude oil: A close below $100 would ease India macro pressure significantly",
+      "India VIX: Fall below 20 = fear easing, possible reversal",
+      "FII flows (post 3:30 PM): Any net buying day = breaks the selling streak \u2014 watch for reversal signal",
+      "NIFTY key level: Close above 22940.0 confirms stability; break below 22486.0 = new leg down",
+      "Global cue: S&P 500 and crude direction in US session will set tomorrow's NIFTY opening gap"
+    ],
+    "bottom_line": "NIFTY at 22,713.10 is under pressure from external factors. The key circuit-breaker to watch is crude oil \u2014 a close below $90 would dramatically change sentiment. India VIX above 20 keeps institutional sellers active. The domestic economy remains fundamentally strong \u2014 this is a macro/geopolitical headwind, not an earnings story."
+  },
+  "top_news": {
+    "date": "April 02, 2026",
+    "generated_at": "2026-04-02 10:19 IST",
+    "note": "News refreshed from last known state \u2014 main agent enriches with live search"
+  },
+  "last_full_refresh": "2026-04-02 10:19 IST"
+}
